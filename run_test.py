@@ -57,7 +57,7 @@ if __name__ == '__main__':
             'nccl': 'nccl1.3.4',
             'requires': [
                 'setuptools', 'cython==0.24', 'numpy<1.11',
-                'scipy<0.19', 'h5py', 'theano', 'protobuf<3',
+                'scipy<0.19', 'h5py', 'theano', 'protobuf<4',
             ],
         }
         script = './test.sh'
