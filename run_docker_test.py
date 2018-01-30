@@ -21,7 +21,7 @@ def main():
     name = docker.make_random_name()
     docker.build_image(name)
     cmd = [
-        'nvidia-docker', 'run', '--rm',
+        'sudo', 'nvidia-docker', 'run', '--rm',
         '-u', str(os.getuid()),
     ]
 

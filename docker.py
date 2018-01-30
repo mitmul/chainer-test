@@ -575,7 +575,7 @@ def run_with(conf, script, no_cache=False, volume=None, env=None,
     run_name = make_random_name()
     signal.signal(signal.SIGTERM, make_handler(run_name))
     signal.signal(signal.SIGINT, make_handler(run_name))
-    cmd = ['nvidia-docker', 'run',
+    cmd = ['sudo', 'nvidia-docker', 'run',
            '--rm',
            '--name=%s' % run_name,
            '-v', '%s:%s' % (host_cwd, work_dir),
@@ -613,7 +613,7 @@ def run_interactive(conf, no_cache=False, volume=None, env=None):
 
     host_cwd = os.getcwd()
     work_dir = '/work'
-    cmd = ['nvidia-docker', 'run',
+    cmd = ['sudo', 'nvidia-docker', 'run',
            '--rm',
            '-v', '%s:%s' % (host_cwd, work_dir),
            '-w', work_dir,
